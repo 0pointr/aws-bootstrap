@@ -7,8 +7,8 @@ phases:
     commands:
       - echo "Setting up node"
       - curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
-      - export NVM_DIR="$HOME/.nvm"
-      - [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+      - \. /home/ec2-user/.bashrc
+      - \. /home/ec2-user/.nvm/nvm.sh
       - nvm alias default v12.7.0
       - nvm install v12.7.0
       - nvm use v12.7.0
