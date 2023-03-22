@@ -2,20 +2,11 @@ version: 0.2
 
 phases:
   install:
-    run-as: ec2-user
     runtime-versions:
       nodejs: 12
     commands:
       - echo "Setting up node"
-      - curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
-      - \. /home/ec2-user/.bashrc
-      - \. /home/ec2-user/.nvm/nvm.sh
-      - nvm alias default v12.7.0
-      - nvm install v12.7.0
-      - nvm use v12.7.0
-      - echo "Node setup complete"
   pre_build:
-    run-as: ec2-user
     commands:
       - echo 'Creating directories'
       - mkdir -p /home/ec2-user/app/logs
