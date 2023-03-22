@@ -9,3 +9,5 @@ A demo hello-world app to learn cloudformation by setting up
 5. CI/CD via CodePipeline and CodeBuild
 
 ... and a few other things.
+
+Find the cloudformation files in [aws-bootstrap-cfn](https://github.com/0pointr/aws-bootstrap-cfn).
