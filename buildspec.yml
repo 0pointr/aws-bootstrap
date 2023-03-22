@@ -8,8 +8,6 @@ phases:
       - echo "Setting up node"
   pre_build:
     commands:
-      - echo 'Creating directories'
-      - mkdir -p /home/ec2-user/app/logs
       - echo "Installing dependencies"
       - npm ci
   build:
