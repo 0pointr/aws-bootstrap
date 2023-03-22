@@ -2,6 +2,7 @@ version: 0.2
 
 phases:
   install:
+    run-as: ec2-user
     runtime-versions:
       nodejs: 12
     commands:
@@ -14,6 +15,7 @@ phases:
       - nvm use v12.7.0
       - echo "Node setup complete"
   pre_build:
+    run-as: ec2-user
     commands:
       - echo 'Creating directories'
       - mkdir -p /home/ec2-user/app/logs
@@ -23,9 +25,10 @@ phases:
     commands:
       - echo "Building app/running tests"
         # - npm test
-    post_build:
-      commands:
-        - echo "Build completed"
-    artifacts:
-      files:
-        - '**/*'
+  post_build:
+     commands:
+       - echo "Build completed"
+
+artifacts:
+  files:
+    - '**/*'
